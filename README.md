@@ -1,4 +1,4 @@
-# Project 2 Golestan++
+# Project 2 Golestan Plus Plus
 [Documentation](https://docs.google.com/document/d/1AbSuqcpkSKaWmsNJ9iFcGCUE301iEYCPQIGl0i2Upe4/edit?usp=sharing)
 <ul>
 <li>

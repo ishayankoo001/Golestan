@@ -31,11 +31,6 @@ import static org.junit.Assert.*;
 
 import org.xml.sax.InputSource;
 
-/**
- * 3 points
- *
- * @author mhrimaz
- */
 public class CheckStyleTest {
 
 

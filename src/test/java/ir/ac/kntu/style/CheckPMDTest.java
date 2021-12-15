@@ -13,10 +13,6 @@ import net.sourceforge.pmd.PMDConfiguration;
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- *
- * @author hossein
- */
 public class CheckPMDTest {
 
     @Test
