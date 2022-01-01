@@ -82,6 +82,7 @@ public class App {
         System.out.println("2: Add new Program");
         System.out.println("3: Add student to program");
         System.out.println("4: Remove student from program");
+        System.out.println("5: Show messages.");
         System.out.println("9: Exit");
         operation = s.nextInt();
         s.nextLine();
@@ -100,6 +101,9 @@ public class App {
                 break;
             case 4:
                 Admin.removeFromProgram();
+                break;
+            case 5:
+                Admin.showAdminMessages();
                 break;
             case 9:
                 adminEnterApp();

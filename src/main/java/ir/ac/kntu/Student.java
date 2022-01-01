@@ -1,7 +1,11 @@
 package ir.ac.kntu;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.File;
 
 /**
  * Student class holds the data of students and has methods that are used by students.
@@ -64,6 +68,7 @@ public class Student extends Person {
         System.out.println("3: Send message to admin");
         System.out.println("9: Exit");
         operation = s.nextInt();
+        s.nextLine();
         switch (operation) {
             case 0:
                 System.out.println(registeredPrograms.toString());
@@ -136,7 +141,31 @@ public class Student extends Person {
     }
 
     public void sendMessageToAdmin() {
+        try {
+            File myObj = new File("Messages.txt");
+            myObj.createNewFile();
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+        try {
+            FileWriter myWriter = new FileWriter("Messages.txt");
+            System.out.println("Enter your message:");
+            String msg = s.nextLine();
+            myWriter.write(this.toString()+": "+msg);
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
 
+
+    }
+
+    @Override
+    public String toString() {
+        return this.getFirstName()+" "+this.getLastName();
     }
 
     public int getMaximumNumberOfUnits() {

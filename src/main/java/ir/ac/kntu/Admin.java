@@ -1,5 +1,7 @@
 package ir.ac.kntu;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -54,7 +56,22 @@ public class Admin {
      * it finds the student with the given id and checks if the student has the
      * program in their schedule, and if they do, it removes them.
      */
+    public static void showAdminMessages(){
+        try {
+            File myObj = new File("Messages.txt");
+            Scanner myReader = new Scanner(myObj);
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                System.out.println(data);
+            }
+            myReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+        App.adminControlPanel();
 
+    }
     public static void removeFromProgram() {
         System.out.println("Enter program Id:");
         String prgId = h.nextLine();
