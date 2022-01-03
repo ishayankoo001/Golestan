@@ -20,11 +20,13 @@ public class Student extends Person {
     public int getStudentDebt() {
         return studentDebt;
     }
-    public int calculateStudentDebt(){
+
+    public int calculateStudentDebt() {
         return this.studentDebt;
     }
-    public int calculateStudentDebt(int offPercentage){
-        return this.studentDebt*offPercentage/100;
+
+    public int calculateStudentDebt(int offPercentage) {
+        return this.studentDebt * offPercentage / 100;
     }
 
     public void setStudentDebt(int studentDebt) {
@@ -51,7 +53,7 @@ public class Student extends Person {
      */
     public boolean canPickProgram(ClassProgram a) {
         for (ClassProgram x : registeredPrograms) {
-            if ((!(x.ProgramInterferenceCheck(a))) &&
+            if ((!(x.programInterferenceCheck(a))) &&
                     (!(x.getProgramSchedule().doSchedulesInterfere(a.getProgramSchedule())))) {
                 return false;
             }
@@ -83,6 +85,7 @@ public class Student extends Person {
         System.out.println("2: Show grades");
         System.out.println("3: Send message to admin");
         System.out.println("4: Order food");
+        System.out.println("5: Add progarm");
         System.out.println("9: Exit");
         operation = s.nextInt();
         s.nextLine();
@@ -103,6 +106,9 @@ public class Student extends Person {
             case 4:
                 goToFoodHandlingSystem();
                 break;
+            case 5:
+                Admin.addToProgram();
+                break;
             case 9:
                 break;
         }
@@ -112,43 +118,43 @@ public class Student extends Person {
         System.out.println("S");
         for (ClassProgram s : registeredPrograms) {
             if (s.getProgramSchedule().getDayOfWeek().contains(0)) {
-                s.toString();
+                System.out.println(s.toString());
             }
         }
         System.out.println("S");
         for (ClassProgram s : registeredPrograms) {
             if (s.getProgramSchedule().getDayOfWeek().contains(1)) {
-                s.toString();
+                System.out.println(s.toString());
             }
         }
         System.out.println("M");
         for (ClassProgram s : registeredPrograms) {
             if (s.getProgramSchedule().getDayOfWeek().contains(2)) {
-                s.toString();
+                System.out.println(s.toString());
             }
         }
         System.out.println("T");
         for (ClassProgram s : registeredPrograms) {
             if (s.getProgramSchedule().getDayOfWeek().contains(3)) {
-                s.toString();
+                System.out.println(s.toString());
             }
         }
         System.out.println("W");
         for (ClassProgram s : registeredPrograms) {
             if (s.getProgramSchedule().getDayOfWeek().contains(4)) {
-                s.toString();
+                System.out.println(s.toString());
             }
         }
         System.out.println("T");
         for (ClassProgram s : registeredPrograms) {
             if (s.getProgramSchedule().getDayOfWeek().contains(5)) {
-                s.toString();
+                System.out.println(s.toString());
             }
         }
         System.out.println("F");
         for (ClassProgram s : registeredPrograms) {
             if (s.getProgramSchedule().getDayOfWeek().contains(6)) {
-                s.toString();
+                System.out.println(s.toString());
             }
         }
         this.studentControlPanel();
@@ -172,7 +178,7 @@ public class Student extends Person {
             FileWriter myWriter = new FileWriter("Messages.txt");
             System.out.println("Enter your message:");
             String msg = s.nextLine();
-            myWriter.write(this.toString()+": "+msg);
+            myWriter.write(this.toString() + ": " + msg);
             myWriter.close();
             System.out.println("Successfully wrote to the file.");
         } catch (IOException e) {
@@ -185,7 +191,7 @@ public class Student extends Person {
 
     @Override
     public String toString() {
-        return this.getFirstName()+" "+this.getLastName();
+        return this.getFirstName() + " " + this.getLastName();
     }
 
     public int getMaximumNumberOfUnits() {
@@ -211,7 +217,8 @@ public class Student extends Person {
     public void setStudentSemester(String studentSemester) {
         this.studentSemester = studentSemester;
     }
-    public void goToFoodHandlingSystem(){
-        setStudentDebt(getStudentDebt()+FoodHandling.welcomePage());
+
+    public void goToFoodHandlingSystem() {
+        setStudentDebt(getStudentDebt() + FoodHandling.welcomePage());
     }
 }

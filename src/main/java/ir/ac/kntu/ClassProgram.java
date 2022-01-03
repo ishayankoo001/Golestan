@@ -45,7 +45,7 @@ public class ClassProgram {
      * @param a program to check
      * @return returns false if the programs interfere
      */
-    boolean ProgramInterferenceCheck(ClassProgram a) {
+    boolean programInterferenceCheck(ClassProgram a) {
         if (this.programSchedule.doSchedulesInterfere(a.programSchedule)) {
             return true;
         }

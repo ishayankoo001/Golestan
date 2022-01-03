@@ -24,28 +24,28 @@ public class FoodHandling {
 
     public static int orderLunch() {
         int operation;
-        mainCourse myMainCourse;
-        drink myDrink;
-        salad mySalad;
+        MainCourse myMainCourse;
+        Drink myDrink;
+        Salad mySalad;
         PlaceToReceive myPlaceToReceive;
         System.out.println("Choose between options Kebab(0), Fish n Chips(1), Burger(2) and Pizza(3)");
         operation = s.nextInt();
         s.nextLine();
         switch (operation) {
             case 0:
-                myMainCourse = mainCourse.KEBAB;
+                myMainCourse = MainCourse.KEBAB;
                 break;
             case 1:
-                myMainCourse = mainCourse.FISHANDCHIPS;
+                myMainCourse = MainCourse.FISHANDCHIPS;
                 break;
             case 2:
-                myMainCourse = mainCourse.BURGER;
+                myMainCourse = MainCourse.BURGER;
                 break;
             case 3:
-                myMainCourse = mainCourse.PIZZA;
+                myMainCourse = MainCourse.PIZZA;
                 break;
             default:
-                myMainCourse = mainCourse.KEBAB;
+                myMainCourse = MainCourse.KEBAB;
                 break;
         }
         System.out.println("Choose between drinks Soda(0) and Water(1)");
@@ -53,13 +53,13 @@ public class FoodHandling {
         s.nextLine();
         switch (operation) {
             case 0:
-                myDrink = drink.SODA;
+                myDrink = Drink.SODA;
                 break;
             case 1:
-                myDrink = drink.WATER;
+                myDrink = Drink.WATER;
                 break;
             default:
-                myDrink = drink.WATER;
+                myDrink = Drink.WATER;
                 break;
         }
         System.out.println("Choose between salads Shirazi(0), Cabbage(1) and Caesar(2)");
@@ -67,16 +67,16 @@ public class FoodHandling {
         s.nextLine();
         switch (operation) {
             case 0:
-                mySalad = salad.SHIRAZI;
+                mySalad = Salad.SHIRAZI;
                 break;
             case 1:
-                mySalad = salad.CABBAGE;
+                mySalad = Salad.CABBAGE;
                 break;
             case 2:
-                mySalad = salad.CAESAR;
+                mySalad = Salad.CAESAR;
                 break;
             default:
-                mySalad = salad.SHIRAZI;
+                mySalad = Salad.SHIRAZI;
                 break;
         }
         System.out.println("Choose where you would want to receive your food: Uni(0), Dorm(1)");

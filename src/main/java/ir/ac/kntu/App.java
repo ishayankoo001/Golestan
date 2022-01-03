@@ -33,24 +33,24 @@ public class App {
         String password;
         System.out.println("Welcome to golestan !");
         System.out.println("Enter your username: ");
-        username=s.nextLine();
+        username = s.nextLine();
         System.out.println("Enter your password");
-        password=s.nextLine();
-        for(Student s :students){
-            if (s.getUserName().equals(username)){
-                if(s.getPassword().equals(password)){
+        password = s.nextLine();
+        for (Student s : students) {
+            if (s.getUserName().equals(username)) {
+                operation = -2;
+                if (s.getPassword().equals(password)) {
                     operation = 1;
-                }
-                else {
+                } else {
                     System.out.println("Wrong password");
                 }
             }
         }
-        if(appAdmin.getUserName().equals(username)){
-            if(appAdmin.getPassword().equals(password)){
+        if (appAdmin.getUserName().equals(username)) {
+            operation = -2;
+            if (appAdmin.getPassword().equals(password)) {
                 operation = 0;
-            }
-            else {
+            } else {
                 System.out.println("Wrong password");
             }
         }
@@ -66,6 +66,8 @@ public class App {
                 break;
             case -1:
                 System.out.println("Username not found");
+                break;
+            case -2:
                 break;
 
         }
@@ -114,14 +116,16 @@ public class App {
 
     /**
      * this method is used to find the student given their username and passes the user to Student class if the given username is correct.
+     *
      * @return returns the student with matching username to student class in order for student to login.
      */
 
     public static Student findStudent(String o) {
         String usrname = o;
         for (Student s : students) {
-            if (s.getUserName().equals(usrname))
+            if (s.getUserName().equals(usrname)) {
                 return s;
+            }
         }
         return null;
 
@@ -129,14 +133,16 @@ public class App {
 
     /**
      * This method is similar to findStudent.
+     *
      * @return
      */
     public static Professor findProf() {
         System.out.println("Enter your username:");
         String usrname = s.nextLine();
         for (Professor p : professors) {
-            if (p.getUserName().equals(usrname))
+            if (p.getUserName().equals(usrname)) {
                 return p;
+            }
         }
         System.out.println("Username not found");
         return null;

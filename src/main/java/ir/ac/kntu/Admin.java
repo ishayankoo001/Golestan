@@ -116,7 +116,7 @@ public class Admin {
             if (s.getPersonalNumber().equals(idToAdd)) {
                 if (Integer.parseInt(s.getStudentSemester()) == (App.availablePrograms.get(index).getSemester())) {
                     for (ClassProgram m : s.getRegisteredPrograms()) {
-                        if (m.ProgramInterferenceCheck(App.availablePrograms.get(index))) {
+                        if (m.programInterferenceCheck(App.availablePrograms.get(index))) {
                             System.out.println("Program interfers with one of your current programs");
                             index = -1;
                         }

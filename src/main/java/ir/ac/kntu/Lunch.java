@@ -1,23 +1,23 @@
 package ir.ac.kntu;
 
-enum mainCourse {
+enum MainCourse {
     KEBAB, FISHANDCHIPS, BURGER, PIZZA;
 }
 
-enum salad {
+enum Salad {
     CAESAR, CABBAGE, SHIRAZI;
 }
 
-enum drink {
+enum Drink {
     SODA, WATER,
 }
 
 public class Lunch extends Meals {
-    mainCourse mainCourseType;
-    salad saladType;
-    drink drinkType;
+    MainCourse mainCourseType;
+    Salad saladType;
+    Drink drinkType;
 
-    public Lunch(mainCourse mainCourseType, salad saladType, drink drinkType, PlaceToReceive placeToReceiveLunch) {
+    public Lunch(MainCourse mainCourseType, Salad saladType, Drink drinkType, PlaceToReceive placeToReceiveLunch) {
         this.mainCourseType = mainCourseType;
         this.saladType = saladType;
         this.drinkType = drinkType;
