@@ -12,16 +12,16 @@ enum drink {
     SODA, WATER,
 }
 
-public class Lunch {
+public class Lunch extends Meals {
     mainCourse mainCourseType;
     salad saladType;
     drink drinkType;
-    int price = 0;
 
-    public Lunch(mainCourse mainCourseType, salad saladType, drink drinkType) {
+    public Lunch(mainCourse mainCourseType, salad saladType, drink drinkType, PlaceToReceive placeToReceiveLunch) {
         this.mainCourseType = mainCourseType;
         this.saladType = saladType;
         this.drinkType = drinkType;
+        this.placeToReceiveEdible = placeToReceiveLunch;
         switch (this.mainCourseType) {
             case KEBAB:
                 this.price += 30000;

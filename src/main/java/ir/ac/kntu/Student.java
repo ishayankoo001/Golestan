@@ -17,6 +17,22 @@ public class Student extends Person {
     private ArrayList<Report> passedCourses = new ArrayList<>();
     private String studentSemester;
 
+    public int getStudentDebt() {
+        return studentDebt;
+    }
+    public int calculateStudentDebt(){
+        return this.studentDebt;
+    }
+    public int calculateStudentDebt(int offPercentage){
+        return this.studentDebt*offPercentage/100;
+    }
+
+    public void setStudentDebt(int studentDebt) {
+        this.studentDebt = studentDebt;
+    }
+
+    private int studentDebt;
+
     public Student(String firstName, String lastName, String userName, String password, String personalNumber) {
         super(firstName, lastName, userName, password, personalNumber);
         this.studentSemester = personalNumber.substring(0, 2);
@@ -66,6 +82,7 @@ public class Student extends Person {
         System.out.println("1: Show schedule by day");
         System.out.println("2: Show grades");
         System.out.println("3: Send message to admin");
+        System.out.println("4: Order food");
         System.out.println("9: Exit");
         operation = s.nextInt();
         s.nextLine();
@@ -82,6 +99,9 @@ public class Student extends Person {
                 break;
             case 3:
                 sendMessageToAdmin();
+                break;
+            case 4:
+                goToFoodHandlingSystem();
                 break;
             case 9:
                 break;
@@ -190,5 +210,8 @@ public class Student extends Person {
 
     public void setStudentSemester(String studentSemester) {
         this.studentSemester = studentSemester;
+    }
+    public void goToFoodHandlingSystem(){
+        setStudentDebt(getStudentDebt()+FoodHandling.welcomePage());
     }
 }
