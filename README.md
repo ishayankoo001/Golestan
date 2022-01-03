@@ -8,8 +8,8 @@
     <li> Edit README.md and add your presentaion link below. (instead of ``YOUR_VIDEO_URL``)</li>
 </ul>
 
-[Project Description](https://youtu.be/4CQT2cwLGPc)
-[Project Description - High Quality](https://youtu.be/5SQJFkqdN7U)
+<li>[Project Description](https://youtu.be/4CQT2cwLGPc)</li>
+<li>[Project Description - High Quality](https://youtu.be/5SQJFkqdN7U)</li>
 
 ### Place UML of your project in images directory
 <br>
