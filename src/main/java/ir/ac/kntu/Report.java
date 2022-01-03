@@ -8,6 +8,12 @@ public class Report {
     Course reportCourse;
     int courseGrade;
 
+    public Report(Student reportStudent, Course reportCourse, int courseGrade) {
+        this.reportStudent = reportStudent;
+        this.reportCourse = reportCourse;
+        this.courseGrade = courseGrade;
+    }
+
     @Override
     public String toString() {
         return "Report{" +

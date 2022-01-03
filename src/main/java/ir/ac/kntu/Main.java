@@ -6,9 +6,11 @@ package ir.ac.kntu;
 public class Main {
     public static void main(String[] args) {
         App golestan = App.getInstance();
-        App.students.add(new Student("shayan", "koohi", "ishayan", "1234", "9929813"));
-        App.availableCourses.add(new Course("888", "riazi", null));
+        Student shayan = new Student("shayan", "koohi", "ishayan", "1234", "9929813");
+        Course myCourse = new Course("888", "riazi", null);
+        App.students.add(shayan);
+        App.availableCourses.add(myCourse);
+        shayan.getPassedCourses().add(new Report(shayan, myCourse, 20));
         golestan.appAdmin.login();
-
     }
 }

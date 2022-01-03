@@ -5,6 +5,10 @@ import java.util.Scanner;
 public class FoodHandling {
     static Scanner s = new Scanner(System.in);
 
+    /**
+     * The main page of food handling system.
+     * @return
+     */
     public static int welcomePage() {
         int operation;
 
@@ -22,6 +26,10 @@ public class FoodHandling {
         }
     }
 
+    /**
+     * The fundtion with which users are able to order their lunch
+     * @return
+     */
     public static int orderLunch() {
         int operation;
         MainCourse myMainCourse;
@@ -97,6 +105,11 @@ public class FoodHandling {
         System.out.println("Your order total would be " + myLunch.price + " Tomans");
         return myLunch.price;
     }
+
+    /**
+     * Function that lets users order breakfast
+     * @return
+     */
 
     public static int orderBreakfast() {
         int operation;

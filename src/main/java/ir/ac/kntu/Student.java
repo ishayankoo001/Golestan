@@ -114,6 +114,10 @@ public class Student extends Person {
         }
     }
 
+    /**
+     * A function that lets students show their schedule based on the day of the week
+     */
+
     public void showStudentSchedule() {
         System.out.println("S");
         for (ClassProgram s : registeredPrograms) {
@@ -162,9 +166,19 @@ public class Student extends Person {
 
     }
 
+    /**
+     * A function that shows the grades to students
+     */
     public void showStudentGrades() {
+        for(Report r:passedCourses){
+            System.out.println(r.toString());
+        }
 
     }
+
+    /**
+     * A functin that lets students send messages to the admin using files
+     */
 
     public void sendMessageToAdmin() {
         try {
@@ -218,6 +232,9 @@ public class Student extends Person {
         this.studentSemester = studentSemester;
     }
 
+    /**
+     * connects the student to the food handling system.
+     */
     public void goToFoodHandlingSystem() {
         setStudentDebt(getStudentDebt() + FoodHandling.welcomePage());
     }
