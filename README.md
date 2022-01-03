@@ -9,6 +9,7 @@
 </ul>
 
 [Project Description](https://youtu.be/4CQT2cwLGPc)
+[Project Description - High Quality](https://youtu.be/5SQJFkqdN7U)
 
 ### Place UML of your project in images directory
 <br>
